@@ -1,7 +1,8 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { ChartConfiguration, ChartData, ChartEvent, ChartType } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import DataLabelsPlugin from 'chartjs-plugin-datalabels';
+import { Configuracion } from 'src/app/models/configuracion';
 
 @Component({
   selector: 'app-gprincipal',
@@ -10,7 +11,7 @@ import DataLabelsPlugin from 'chartjs-plugin-datalabels';
 })
 export class GprincipalComponent {
   @ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined;
-
+  @Input() configuracion: Configuracion = new Configuracion();
 
   public barChartOptions: ChartConfiguration['options'] = {
     responsive: true,
@@ -38,11 +39,11 @@ export class GprincipalComponent {
   ];
 
   public barChartData: ChartData<'bar'> = {
-    labels: [ 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio'],
+    labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio'],
     datasets: [
-      { data: [ 541837, 59, 80, 81, 56, 55, 40 ], label: 'Guadalajara'},
-      { data: [ 100, 59, 80, 81, 56, 55, 40 ], label: 'Juarez'},
-      { data: [ 65, 59, 80, 81, 56, 55, 40 ], label: 'Tijuana'}
+      { data: [541837, 59, 80, 81, 56, 55, 40], label: 'Guadalajara' },
+      { data: [100, 59, 80, 81, 56, 55, 40], label: 'Juarez' },
+      { data: [65, 59, 80, 81, 56, 55, 40], label: 'Tijuana' }
     ]
   };
 
@@ -64,7 +65,7 @@ export class GprincipalComponent {
       Math.round(Math.random() * 100),
       56,
       Math.round(Math.random() * 100),
-      40 ];
+      40];
 
     this.chart?.update();
   }

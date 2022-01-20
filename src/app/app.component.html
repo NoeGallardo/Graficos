@@ -1,6 +1,14 @@
-<div class="container">
-    <h1>Graficos Trade</h1><hr>
-    <app-filtro></app-filtro>
-    <app-gprincipal></app-gprincipal>
+<div class="container mt-5">
+    <h1>Graficos Trade</h1>
+    <hr>
+    <div class="row">
+        <div class="col-sm-12 col-md-6">
+            <!-- [] das amor y () recibes amorsh -->
+            <app-filtro [configuracion]="getConfig()" (emitter)="setConfig($event)"></app-filtro>
+            <app-gprincipal></app-gprincipal>
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <app-tabla-metrico [configuracion]="getConfig()"></app-tabla-metrico>
+        </div>
+    </div>
 </div>
-

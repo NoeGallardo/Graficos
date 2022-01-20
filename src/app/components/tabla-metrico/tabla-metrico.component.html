@@ -1,0 +1,19 @@
+<button type="button" name="" id="" class="btn btn-primary btn-block">
+    clic para buscar o consultar alv
+</button>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of getList(); let i=index">
+            <th scope="row">{{ i }}</th>
+            <td>{{ item }}</td>
+            <td>{{ item }}</td>
+        </tr>
+    </tbody>
+</table>
