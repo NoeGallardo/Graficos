@@ -8,6 +8,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 // Graficas
 import { NgChartsModule } from 'ng2-charts';
 
+// Import library module
+import { NgxSpinnerModule } from "ngx-spinner";
+
 // dropdown
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
@@ -28,6 +31,7 @@ import { TablaMetricoComponent } from './components/tabla-metrico/tabla-metrico.
     BrowserModule,
     FormsModule,
     NgChartsModule,
+    NgxSpinnerModule,
     NgMultiSelectDropDownModule.forRoot(),
     ReactiveFormsModule
   ],
