@@ -1,0 +1,19 @@
+<div class="row">
+  <div style="width:50%">
+</div>
+    <div style="width:50%">
+    </div>
+    <div class="col-md-6">
+      <div style="display: block">
+        <canvas baseChart
+          [data]="barChartData"
+          [options]="barChartOptions"
+          [plugins]="barChartPlugins"
+          [type]="barChartType"
+          (chartHover)="chartHovered($event)"
+          (chartClick)="chartClicked($event)">
+        </canvas>
+      </div>
+      <button mat-button mat-raised-button color="primary" (click)="randomize()">Update</button>
+    </div>
+  </div>

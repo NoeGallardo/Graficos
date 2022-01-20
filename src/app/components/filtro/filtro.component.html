@@ -1,0 +1,12 @@
+<div class="col-md-6">
+    <ng-multiselect-dropdown
+    [placeholder]="'Select Location'"
+    [settings]="dropdownSettings"
+    [data]="dropdownList"
+    [(ngModel)]="selectedItems"
+    (onSelect)="onItemSelect($event)"
+    (onSelectAll)="onSelectAll($event)">
+    </ng-multiselect-dropdown>
+</div>
+
+
