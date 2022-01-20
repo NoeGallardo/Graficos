@@ -1,6 +1,25 @@
-<div>
-    <ng-multiselect-dropdown [placeholder]="'Select Location'" [settings]="dropdownSettings" [data]="dropdownList"
-        [(ngModel)]="selectedItems" (onSelect)="onItemSelect($event)" (onSelectAll)="onSelectAll($event)"
-        (onDeSelect)="onItemDeSelect($event)">
-    </ng-multiselect-dropdown>
+<div class="row">
+    <div class="col-sm-12 col-md-6">
+        <ng-multiselect-dropdown 
+            [placeholder]="'Select Location'" 
+            [settings]="dropdownSettings" 
+            [data]="dropdownList"
+            [(ngModel)]="selectedItems" 
+            (onSelect)="onItemSelect($event)" 
+            (onSelectAll)="onSelectAll($event)"
+            (onDeSelect)="onItemDeSelect($event)">
+        </ng-multiselect-dropdown>
+    </div>
+
+    <div class="col-sm-12 col-md-3">
+        <input placeholder="Start" matInput [matDatepicker]="myDatePicker">
+            <mat-datepicker-toggle [for]="myDatePicker" matSuffix></mat-datepicker-toggle>
+            <mat-datepicker #myDatePicker></mat-datepicker>
+    </div>
+
+    <div class="col-sm-12 col-md-3">
+        <input placeholder="End" matInput [matDatepicker]="myDatePicker">
+            <mat-datepicker-toggle [for]="myDatePicker" matSuffix></mat-datepicker-toggle>
+            <mat-datepicker #myDatePicker></mat-datepicker>
+    </div>
 </div>

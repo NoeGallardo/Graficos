@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 // Models
 import { Configuracion } from './models/configuracion';
+import { Ciudades } from "./models/ciudades";
 
 @Component({
   selector: 'app-root',
@@ -12,9 +13,11 @@ export class AppComponent {
   title = 'GraficaTrafico';
 
   private configuracion: Configuracion;
+  private ciudades: Ciudades;
 
   constructor() {
     this.configuracion = new Configuracion();
+    this.ciudades = new Ciudades();
   }
 
   public getConfig(): Configuracion {
@@ -22,7 +25,15 @@ export class AppComponent {
   }
 
   public setConfig(event: any): void {
-    console.log(event);
+    //console.log(event);
+  }
+
+  public getCiudades(): Ciudades {
+    return this.ciudades;  
+  }
+
+  public setCiudades(event: any): void {
+    console.log(event.nombres);
   }
 
 }

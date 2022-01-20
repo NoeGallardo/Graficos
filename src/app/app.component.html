@@ -1,14 +1,31 @@
 <div class="container mt-5">
     <h1>Graficos Trade</h1>
     <hr>
+
+    <!-- Div del componente de Filtros / Busqueda-->
     <div class="row">
+        <div>
+            <!-- [] El padre Da y () El Padre Recibe -->
+            <app-filtro 
+                [configuracion]="getConfig()" 
+                (emitter)="setConfig($event)"
+                [ciudades]="getCiudades()"
+                (emitter2)="setCiudades($event)"
+            ></app-filtro>
+        </div>   <br/><br/><br/><hr>
+
+        <!-- Div de la grafica-->
         <div class="col-sm-12 col-md-6">
-            <!-- [] das amor y () recibes amorsh -->
-            <app-filtro [configuracion]="getConfig()" (emitter)="setConfig($event)"></app-filtro>
             <app-gprincipal></app-gprincipal>
         </div>
+
+        <!--Div de la tabla de metricos-->
         <div class="col-sm-12 col-md-6">
-            <app-tabla-metrico [configuracion]="getConfig()"></app-tabla-metrico>
+            <app-tabla-metrico 
+                [configuracion]="getConfig()"
+                [ciudades]="getCiudades()"
+            ></app-tabla-metrico>
         </div>
+
     </div>
 </div>

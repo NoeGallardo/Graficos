@@ -24,7 +24,7 @@ export class GprincipalComponent {
     },
     plugins: {
       legend: {
-        display: true,
+        display: false,
       },
       datalabels: {
         anchor: 'end',
@@ -39,11 +39,27 @@ export class GprincipalComponent {
   ];
 
   public barChartData: ChartData<'bar'> = {
-    labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio'],
+  labels: ['Period'],
     datasets: [
-      { data: [541837, 59, 80, 81, 56, 55, 40], label: 'Guadalajara' },
-      { data: [100, 59, 80, 81, 56, 55, 40], label: 'Juarez' },
-      { data: [65, 59, 80, 81, 56, 55, 40], label: 'Tijuana' }
+      { data: [54], label: 'GUADALAJARA_899_MX' },
+      { data: [10], label: 'TIJUANA_808' },
+      { data: [63], label: 'MCI_REYNOSA_130' },
+      { data: [65], label: 'AUTOMOTIVE_14_MX' },
+      { data: [36], label: 'AGM_QUERETARO_7072' },
+      { data: [45], label: 'AGM_QUERETARO_7071_MX' },
+      { data: [25], label: 'AUTOMOTIVE_24_MX' },
+      { data: [70], label: 'GDL_SOUTH_US' },
+      { data: [33], label: 'TIJUANA_890' },
+      { data: [50], label: 'JUAREZ_SOUTH_US' },
+      { data: [40], label: 'JUAREZ_NORTH_US' },
+      { data: [100], label: 'GDL_NORTH_US' },
+      { data: [98], label: 'SAN_LUIS_BOSE_MX' },
+      { data: [40], label: 'MCI_REYNOSA_MX' },
+      { data: [33], label: 'MCI_REYNOSA_394' },
+      { data: [98], label: 'AGUASCALIENTES_US' },
+      { data: [50], label: 'GUADALAJARA_784_MX' },
+      { data: [40], label: 'JPCBA_PLASTICS_US' },
+      { data: [50], label: 'GUADALAJARA_874_MX' }
     ]
   };
 
