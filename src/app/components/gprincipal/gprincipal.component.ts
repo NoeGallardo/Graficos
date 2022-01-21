@@ -3,6 +3,7 @@ import { ChartConfiguration, ChartData, ChartEvent, ChartType } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import DataLabelsPlugin from 'chartjs-plugin-datalabels';
 import { Configuracion } from 'src/app/models/configuracion';
+import { Ciudades } from "src/app/models/ciudades";
 
 @Component({
   selector: 'app-gprincipal',
@@ -12,6 +13,7 @@ import { Configuracion } from 'src/app/models/configuracion';
 export class GprincipalComponent {
   @ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined;
   @Input() configuracion: Configuracion = new Configuracion();
+  @Input() ciudades: Ciudades = new Ciudades;
 
   public barChartOptions: ChartConfiguration['options'] = {
     responsive: true,
@@ -74,15 +76,22 @@ export class GprincipalComponent {
 
   public randomize(): void {
     // Only Change 3 values
-    this.barChartData.datasets[0].data = [
-      Math.round(Math.random() * 100),
-      59,
-      80,
-      Math.round(Math.random() * 100),
-      56,
-      Math.round(Math.random() * 100),
-      40];
+
+    for(var i:number =0; i<=18; i++){
+      this.barChartData.datasets[i].data = [
+        Math.round(Math.random() * 100),
+        59,
+        80,
+        Math.round(Math.random() * 100),
+        56,
+        Math.round(Math.random() * 100),
+        40];
+    }
 
     this.chart?.update();
+  }
+
+  public setCiudades():Ciudades {
+    return this.ciudades;
   }
 }

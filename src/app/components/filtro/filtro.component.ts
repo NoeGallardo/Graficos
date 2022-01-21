@@ -2,8 +2,6 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 //import { IDropdownSettings } from 'ng-multiselect-dropdown';
 import { Configuracion } from 'src/app/models/configuracion';
 import { Ciudades } from 'src/app/models/ciudades';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
 
 @Component({
   selector: 'app-filtro',
@@ -11,6 +9,10 @@ import { MatNativeDateModule } from '@angular/material/core';
   styleUrls: ['./filtro.component.css']
 })
 export class FiltroComponent implements OnInit {
+
+  minDate = new Date(2021,1,1);
+  maxDate = new Date(2023,1,1);
+
   dropdownList: any;
   selectedItems: any;
   dropdownSettings: any;
@@ -35,7 +37,26 @@ export class FiltroComponent implements OnInit {
       { item_id: 2, item_text: 'Tijuana' },
       { item_id: 3, item_text: 'Juarez' },
       { item_id: 4, item_text: 'San Luis' },
-      { item_id: 5, item_text: 'Aguascalientes' }
+      { item_id: 5, item_text: 'Aguascalientes' },
+      { item_id: 6, item_text: 'TIJUANA_808'},
+      { item_id: 7, item_text: 'GUADALAJARA_899_MX'},
+      { item_id: 8, item_text: 'MCI_REYNOSA_130'},
+      { item_id: 9, item_text: 'AUTOMOTIVE_14_MX'},
+      { item_id: 10, item_text: 'AGM_QUERETARO_7072'},
+      { item_id: 11, item_text: 'AGM_QUERETARO_7071_MX'},
+      { item_id: 12, item_text: 'AUTOMOTIVE_24_MX'},
+      { item_id: 13, item_text: 'GDL_SOUTH_US'},
+      { item_id: 14, item_text: 'TIJUANA_890'},
+      { item_id: 15, item_text: 'JUAREZ_SOUTH_US'},
+      { item_id: 16, item_text: 'JUAREZ_NORTH_US'},
+      { item_id: 17, item_text: 'GDL_NORTH_US'},
+      { item_id: 18, item_text: 'SAN_LUIS_BOSE_MX'},
+      { item_id: 19, item_text: 'MCI_REYNOSA_MX'},
+      { item_id: 20, item_text: 'MCI_REYNOSA_394'},
+      { item_id: 21, item_text: 'AGUASCALIENTES_US'},
+      { item_id: 22, item_text: 'GUADALAJARA_784_MX'},
+      { item_id: 23, item_text: 'PCBA_PLASTICS_US'},
+      { item_id: 24, item_text: 'GUADALAJARA_874_MX'}
     ];
 
     /*this.selectedItems = [
@@ -83,5 +104,12 @@ export class FiltroComponent implements OnInit {
 
   onSelectAll(items: any) {
     console.log(items);
+  }
+
+
+  //Acciones del botom
+  //Puede ser reemplazado por un Form
+  buttonClick():void{
+    console.log("Botom Presionado");
   }
 }

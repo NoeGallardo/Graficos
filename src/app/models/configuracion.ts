@@ -1,3 +1,3 @@
 export class Configuracion {
-    public filtros = new Array<string>();
+    public filtros = new Array<any>();
 }

@@ -11,15 +11,20 @@
         </ng-multiselect-dropdown>
     </div>
 
-    <div class="col-sm-12 col-md-3">
-        <input placeholder="Start" matInput [matDatepicker]="myDatePicker">
+    <div class="col-sm-12 col-md-2">
+        <input size="10" placeholder="Start" matInput [matDatepicker]="myDatePicker"
+                [min]="minDate" [max]="maxDate" disabled>
             <mat-datepicker-toggle [for]="myDatePicker" matSuffix></mat-datepicker-toggle>
-            <mat-datepicker #myDatePicker></mat-datepicker>
+            <mat-datepicker disabled="false" #myDatePicker startView="multi-year"></mat-datepicker>
     </div>
 
-    <div class="col-sm-12 col-md-3">
-        <input placeholder="End" matInput [matDatepicker]="myDatePicker">
+    <!--<div class="col-sm-12 col-md-2">
+        <input size="10" placeholder="End" matInput [matDatepicker]="myDatePicker">
             <mat-datepicker-toggle [for]="myDatePicker" matSuffix></mat-datepicker-toggle>
             <mat-datepicker #myDatePicker></mat-datepicker>
+    </div>-->
+
+    <div class="col-sm-12 col-md-2">
+        <button (click)="buttonClick()" type="button" class="btn btn-success">Generar</button>
     </div>
 </div>
